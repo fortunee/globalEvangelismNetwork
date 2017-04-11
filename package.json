@@ -1,0 +1,25 @@
+{
+  "name": "gen",
+  "version": "1.0.0",
+  "description": "A team of evangelists from the churches of Christ in Nigeria, on a global evangelism mission to rescue a perishing world.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-efortune/globalEvangelismNetwork.git"
+  },
+  "keywords": [
+    "Church",
+    "of",
+    "Christ",
+    "Christians"
+  ],
+  "author": "Fortune Ekeruo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-efortune/globalEvangelismNetwork/issues"
+  },
+  "homepage": "https://github.com/andela-efortune/globalEvangelismNetwork#readme"
+}
