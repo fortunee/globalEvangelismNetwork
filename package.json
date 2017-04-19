@@ -4,7 +4,7 @@
   "description": "A team of evangelists from the churches of Christ in Nigeria, on a global evangelism mission to rescue a perishing world.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node tools/srcServer.js"
   },
   "repository": {
     "type": "git",
