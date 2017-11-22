@@ -8,7 +8,7 @@ export default {
   entry: [
     'eventsource-polyfill', // necessary for IE hot reloading
     'webpack-hot-middleware/client?reload=true', // the query parameter reloads the page if hot reload fails for some reason
-    './client/index' // it is import that the src/index file is last in the array as order here is critical and important.
+    './client/index' // it is import that the client/index file is last in the array as order here is critical and important.
   ],
   target: 'web',
   output: {
