@@ -4,10 +4,10 @@
   "description": "A team of evangelists from the churches of Christ in Nigeria, on a global evangelism mission to rescue a perishing world.",
   "main": "server.js",
   "scripts": {
-    "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch",
-    "open:src": "babel-node tools/srcServer.js",
-    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "prestart": "babel-node server/startMessage.js",
+    "start": "npm-run-all --parallel open:client lint:watch",
+    "open:client": "babel-node server/server.js",
+    "lint": "node_modules/.bin/esw webpack.config.* client server",
     "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
@@ -20,7 +20,7 @@
     "Christ",
     "Christians"
   ],
-  "author": "Fortune Ekeruo",
+  "author": "Fortune Ekeruo <legalmody@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "6.8.0",
