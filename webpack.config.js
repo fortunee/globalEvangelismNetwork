@@ -21,6 +21,7 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(), // Ensures consistent build hashes
     new webpack.NoErrorsPlugin()
   ],
   module: {
