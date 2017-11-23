@@ -7,9 +7,9 @@ import SideBar from './shared/SideBar';
 class App extends Component {
     render() {
         return (
-            <div className="container">
+            // <div className="container-fluid">
+            <Grid fluid>
                 <NavBar />
-                <Grid>
                 <Row className="show-grid">
                     <Col xs={6} md={4}>
                         <SideBar />
@@ -19,7 +19,7 @@ class App extends Component {
                     </Col>
                 </Row>
             </Grid>
-            </div>
+            // </div>
         );
     }
 }
