@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => {
-    return (
-        <h1>Hello From React!</h1>
-    );
-};
+class App extends Component {
+    render() {
+        return (
+            <h1>Hello From React!</h1>
+        );
+    }
+}
+
+export default App;
