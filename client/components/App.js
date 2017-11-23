@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import NavBar from './shared/NavBar';
 
 class App extends Component {
     render() {
         return (
-            <h1>Hello From React!</h1>
+            <div className="container">
+                <NavBar />
+            </div>
         );
     }
 }
