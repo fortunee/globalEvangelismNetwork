@@ -5,7 +5,7 @@ export default () => {
         <nav className="navbar navbar-default">
             <div className="container-fluid">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="#">GEN</a>
+                    <a className="navbar-brand" href="#">COC</a>
                 </div>
                 <div className="colapse navbar-colapse">
                     <ul className="nav navbar-nav navbar-right">
@@ -14,5 +14,5 @@ export default () => {
                 </div>
             </div>
         </nav>
-    )
+    );
 };
