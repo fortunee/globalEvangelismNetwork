@@ -8,7 +8,6 @@ class App extends Component {
     render() {
         return (
              <Grid >
-                {/* <NavBar /> */}
                  <Row className="show-grid">
                      <Col xs={4} md={3}>
                          <SideBar />
