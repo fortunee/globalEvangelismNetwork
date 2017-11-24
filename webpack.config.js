@@ -8,7 +8,7 @@ export default {
   entry: [
     'eventsource-polyfill', // necessary for IE hot reloading
     'webpack-hot-middleware/client?reload=true', // the query parameter reloads the page if hot reload fails for some reason
-    './src/index' // it is import that the src/index file is last in the array as order here is critical and important.
+    './client/index' // it is import that the client/index file is last in the array as order here is critical and important.
   ],
   target: 'web',
   output: {
@@ -17,15 +17,16 @@ export default {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src'
+    contentBase: './client'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(), // Ensures consistent build hashes
     new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
-      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
+      {test: /\.js$/, include: path.join(__dirname, 'client'), loaders: ['babel'] },
       {test: /(\.css)$/, loaders: ['style', 'css'] },
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
