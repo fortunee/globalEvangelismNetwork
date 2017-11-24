@@ -8,7 +8,9 @@
     "start": "npm-run-all --parallel open:client lint:watch",
     "open:client": "babel-node server/server.js",
     "lint": "node_modules/.bin/esw webpack.config.* client server",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tests/testSetup.js \"tests/*.spec.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
