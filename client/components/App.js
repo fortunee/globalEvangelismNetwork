@@ -14,7 +14,6 @@ class App extends Component {
                          <SideBar />
                      </Col>
                      <Col xs={12} md={9}>
-                         Main Section
                          {this.props.children}
                      </Col>
                  </Row>
