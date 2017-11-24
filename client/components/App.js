@@ -15,6 +15,7 @@ class App extends Component {
                      </Col>
                      <Col xs={12} md={9}>
                          Main Section
+                         {this.props.children}
                      </Col>
                  </Row>
              </Grid>

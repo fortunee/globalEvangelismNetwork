@@ -9,7 +9,7 @@ class SideBar extends Component {
                 {id: 2, href: '/news', text: 'News'},
                 {id: 3, href: '/about', text: 'About'},
                 {id: 4, href: '/contact', text: 'Contact Us'},
-                {id: 4, href: '/signup', text: 'Signup'}
+                {id: 5, href: '/signup', text: 'Signup'}
             ];
     }
 
