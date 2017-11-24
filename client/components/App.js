@@ -7,19 +7,17 @@ import SideBar from './shared/SideBar';
 class App extends Component {
     render() {
         return (
-            // <div className="container-fluid">
-            <Grid fluid>
-                <NavBar />
-                <Row className="show-grid">
-                    <Col xs={6} md={4}>
-                        <SideBar />
-                    </Col>
-                    <Col xs={12} md={8}>
-                        Main Section
-                    </Col>
-                </Row>
-            </Grid>
-            // </div>
+             <Grid >
+                {/* <NavBar /> */}
+                 <Row className="show-grid">
+                     <Col xs={4} md={3}>
+                         <SideBar />
+                     </Col>
+                     <Col xs={12} md={9}>
+                         Main Section
+                     </Col>
+                 </Row>
+             </Grid>
         );
     }
 }
