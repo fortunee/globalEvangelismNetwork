@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "babel-node server/startMessage.js",
     "start": "npm-run-all --parallel open:client lint:watch",
-    "open:client": "babel-node server/server.js",
+    "open:client": "nodemon server/server.js --exec babel-node ",
     "lint": "node_modules/.bin/esw webpack.config.* client server",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tests/testSetup.js \"tests/*.spec.js\"",
@@ -27,8 +27,11 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-polyfill": "6.8.0",
+    "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
+    "classnames": "^2.2.5",
     "jquery": "2.2.3",
+    "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-bootstrap": "^0.31.5",
@@ -39,7 +42,8 @@
     "react-router-redux": "4.0.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "toastr": "2.1.2"
+    "toastr": "2.1.2",
+    "validator": "^9.1.2"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
