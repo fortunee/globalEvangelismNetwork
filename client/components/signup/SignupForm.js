@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
+// import { Form, FormGroup, FormControl, Col, Checkbox, Button } from 'react-bootstrap';
 
 class SignupForm extends Component {
     constructor(props) {
@@ -24,7 +26,7 @@ class SignupForm extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
+        this.props.userSignupRequest(this.state);
     }
 
 
@@ -97,5 +99,9 @@ class SignupForm extends Component {
         );
     }
 }
+
+SignupForm.propTypes = {
+    userSignupRequest: PropTypes.func.isRequired
+};
 
 export default SignupForm;
