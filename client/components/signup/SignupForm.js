@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import validateData from './../../../server/validations/signup.validator';
 
 class SignupForm extends Component {
     constructor(props) {
@@ -25,13 +26,25 @@ class SignupForm extends Component {
         });
     }
 
+    isValid() {
+        const { errors, isValid } = validateData(this.state);
+
+        if(!isValid) {
+            this.setState({ errors });
+        }
+
+        return isValid;
+    }
+
     onSubmit(e) {
-        this.setState({ errors: {}, isLoading: true });
         e.preventDefault();
-        this.props.userSignupRequest(this.state).then(
-            () => {},
-            (err) => this.setState({ errors: err.response.data, isLoading: false })
-        );
+        if (this.isValid()) {
+            this.setState({ errors: {}, isLoading: true });
+            this.props.userSignupRequest(this.state).then(
+                () => {},
+                (err) => this.setState({ errors: err.response.data, isLoading: false })
+            );
+        }
     }
 
 

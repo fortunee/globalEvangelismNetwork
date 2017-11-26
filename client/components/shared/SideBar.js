@@ -37,7 +37,7 @@ class SideBar extends Component {
                     {this.menuList()}
                 </ul>
             </div>
-        )
+        );
     }
 }
 
