@@ -5,16 +5,17 @@ import { connect } from 'react-redux';
 
 import SignupForm from './SignupForm';
 import { userSignupRequest } from './../../actions/signupActions';
+import { addFlashMessage } from '../../actions/flashMessagesAction';
 
 class Signup extends Component {
     render() {
-        const { userSignupRequest } = this.props;
+        const { userSignupRequest, addFlashMessage } = this.props;
 
         return (
             <div>
                 <Row>
                     <Col md={4} mdOffset={3}>
-                        <SignupForm userSignupRequest={userSignupRequest} />
+                        <SignupForm userSignupRequest={userSignupRequest} addFlashMessage={addFlashMessage} />
                     </Col>
                 </Row>
             </div>
@@ -23,7 +24,8 @@ class Signup extends Component {
 }
 
 Signup.propTypes = {
-    userSignupRequest: PropTypes.func.isRequired
+    userSignupRequest: PropTypes.func.isRequired,
+    addFlashMessage: PropTypes.func.isRequired
 };
 
-export default connect(null, { userSignupRequest })(Signup);
+export default connect(null, { userSignupRequest, addFlashMessage })(Signup);
