@@ -6,7 +6,9 @@ let router = express.Router();
 router.post('/', (req, res) => {
     const { errors, isValid } = validateData(req.body);
 
-    if(!isValid) {
+    if(isValid) {
+        res.status(200).json({ success: true });
+    } else {
         res.status(400).json(errors);
     }
 });

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import NavBar from './shared/NavBar';
 import SideBar from './shared/SideBar';
@@ -20,5 +21,9 @@ class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    children: PropTypes.object.isRequired
+};
 
 export default App;
