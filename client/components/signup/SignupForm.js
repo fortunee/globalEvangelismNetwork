@@ -44,7 +44,7 @@ class SignupForm extends Component {
                 () => { 
                     this.props.addFlashMessage({
                         type: 'success',
-                        message: 'You signed up successfully!'
+                        text: 'You signed up successfully!'
                     });
                     this.context.router.push('/');
                 },
