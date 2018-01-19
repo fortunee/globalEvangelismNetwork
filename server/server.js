@@ -13,7 +13,7 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(bodyParser.json());
-app.use('/api/signup', users);
+app.use('/api/user', users);
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true, 

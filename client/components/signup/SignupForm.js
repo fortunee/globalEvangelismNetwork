@@ -13,10 +13,12 @@ class SignupForm extends Component {
             password: '',
             confirmPassword: '',
             errors: {},
-            isLoading: false
+            isLoading: false,
+            invalid: false
         };
 
         this.onChange = this.onChange.bind(this);
+        this.checkUserExists = this.checkUserExists.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -34,6 +36,27 @@ class SignupForm extends Component {
         }
 
         return isValid;
+    }
+
+    checkUserExists(e) {
+        e.preventDefault();
+        const field =  e.target.name;
+        const value = e.target.value;
+
+        if (value !== '') {
+            this.props.isUserExists(value).then(res => {
+                let errors = this.state.errors;
+                let invalid;
+                if (res.data.user) {
+                    errors[field] = `User with that ^ ${field} exists`;
+                    invalid = true;
+                } else {
+                    errors[field] = '';
+                    invalid = false;
+                }
+                this.setState({ errors, invalid });
+            });
+        }
     }
 
     onSubmit(e) {
@@ -75,6 +98,7 @@ class SignupForm extends Component {
                     value={this.state.username}
                     field="username"
                     onChange={this.onChange}
+                    checkUserExists={this.checkUserExists}
                 />
 
                 <TextFieldGroup 
@@ -84,6 +108,7 @@ class SignupForm extends Component {
                     field="email"
                     type="email"
                     onChange={this.onChange}
+                    checkUserExists={this.checkUserExists}
                 />
 
                 <TextFieldGroup 
@@ -105,7 +130,7 @@ class SignupForm extends Component {
                 />
 
                 <div className="form-group">
-                    <button disabled={this.state.isLoading} className="btn btn-success btn-lg col-md-offset-8">
+                    <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-success btn-lg col-md-offset-8">
                         Signup
                     </button>
                 </div>
@@ -116,7 +141,8 @@ class SignupForm extends Component {
 
 SignupForm.propTypes = {
     userSignupRequest: PropTypes.func.isRequired,
-    addFlashMessage: PropTypes.func.isRequired
+    addFlashMessage: PropTypes.func.isRequired,
+    isUserExists: PropTypes.func.isRequired
 };
 
 SignupForm.contextTypes = {
