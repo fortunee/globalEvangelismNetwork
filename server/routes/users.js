@@ -59,7 +59,15 @@ router.post('/', (req, res) => {
             res.status(400).json(errors);
         }
     });
+});
 
+router.get('/:identifier', (req, res) => {
+    User.query({
+        where: { username: req.params.identifier },
+        orWhere: { email: req.params.identifier }
+    }).fetch().then(user => {
+        res.status(200).json({ user });
+    });
 });
 
 export default router;
