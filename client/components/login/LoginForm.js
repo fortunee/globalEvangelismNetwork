@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../shared/TextFieldGroup';
-
+import loginValidator from '../../../server/validations/login.validator';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -21,8 +21,22 @@ class LoginForm extends Component {
         this.setState({ [e.target.name] : e.target.value });
     }
 
+    isValid() {
+        const { errors, isValid } = loginValidator(this.state);
+
+        if (!isValid) {
+            this.setState({ errors });
+        }
+
+        return isValid;
+    }
     onSubmit(e) {
         e.preventDefault();
+
+        if (this.isValid()) {
+            // Dispatch an action
+
+        }
     }
     
     render() {

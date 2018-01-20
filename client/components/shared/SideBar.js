@@ -8,10 +8,10 @@ class SideBar extends Component {
         super();
         this.menu = [
                 {id: 1, href: '/', text: 'Home'},
-                {id: 3, href: '/profile', text: 'Profile'},
-                {id: 2, href: '/questions', text: 'Questions'},
-                {id: 5, href: '/signup', text: 'Signup'},
-                {id: 6, href: '/login', text: 'Login'},
+                {id: 2, href: '/profile', text: 'Profile'},
+                {id: 3, href: '/questions', text: 'Questions'},
+                {id: 4, href: '/signup', text: 'Signup'},
+                {id: 5, href: '/login', text: 'Login'},
                 {id: 6, href: '/logout', text: 'Logout'}
             ];
     }
