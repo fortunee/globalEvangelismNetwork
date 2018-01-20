@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { logoutAction } from './../../actions/authActions';
 
 import './shared.style.css';
+import Signup from '../signup/Signup';
 
 class SideBar extends Component {
-    constructor() {
-        super();
-        this.menu = [
-                {id: 1, href: '/', text: 'Home'},
-                {id: 2, href: '/profile', text: 'Profile'},
-                {id: 3, href: '/questions', text: 'Questions'},
-                {id: 4, href: '/signup', text: 'Signup'},
-                {id: 5, href: '/login', text: 'Login'},
-                {id: 6, href: '/logout', text: 'Logout'}
-            ];
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
     }
 
-    menuList() {
-       return this.menu.map((link) => {
-            return(
-                <li key={link.id} className="menu-selection text-center">
-                    <Link to={link.href}>{link.text}</Link>
-                </li>
-            );
-        });
+    onClick(e) {
+        e.preventDefault();
+        this.props.logoutAction();
     }
 
     render() {
+        const { isAuthenticated } = this.props.auth;
+        const userMenuList = (
+            <ul className="menu-selection text-center">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">Profile</Link></li>
+                <li><Link to="/">Questions</Link></li>
+                <li><a href="#" onClick={this.onClick}>Logout</a></li>
+            </ul>
+        );
+
+        const guestMenuList = (
+            <ul className="menu-selection text-center">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/signup">Signup</Link></li>
+                <li><Link to="/login">Login</Link></li>
+            </ul>
+        );
+
         return (
             <div>
                 <ul className="sidebar">
@@ -35,11 +46,22 @@ class SideBar extends Component {
                             <i className="fa fa-list-alt"></i>
                         </a>
                     </li>
-                    {this.menuList()}
+                    {isAuthenticated ? userMenuList : guestMenuList}
                 </ul>
             </div>
         );
     }
 }
 
-export default SideBar;
+SideBar.propTypes = {
+    auth: PropTypes.object.isRequired,
+    logoutAction: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    };
+}
+
+export default connect(mapStateToProps, { logoutAction })(SideBar);
