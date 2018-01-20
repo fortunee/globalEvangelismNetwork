@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TextFieldGroup from '../shared/TextFieldGroup';
-import loginValidator from '../../../server/validations/login.validator';
+import { connect } from 'react-redux';
+
+import { loginAction } from './../../actions/loginAction';
+import TextFieldGroup from './../shared/TextFieldGroup';
+import loginValidator from './../../../server/validations/login.validator';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -30,12 +33,16 @@ class LoginForm extends Component {
 
         return isValid;
     }
+
     onSubmit(e) {
         e.preventDefault();
 
         if (this.isValid()) {
-            // Dispatch an action
-
+            this.setState({ errors: {}, isLoading: true });
+            this.props.loginAction(this.state).then(
+                res => this.context.router.push('/'),
+                err => this.setState({ errors: err.response.data, isLoading: false })
+            );
         }
     }
     
@@ -74,4 +81,12 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+LoginForm.propTypes = {
+    loginAction : PropTypes.func.isRequired
+};
+
+LoginForm.contextTypes = {
+    router: PropTypes.object.isRequired
+};
+
+export default connect(null, { loginAction })(LoginForm);
