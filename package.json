@@ -33,6 +33,7 @@
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
     "jquery": "2.2.3",
+    "jsonwebtoken": "^8.1.0",
     "knex": "^0.14.2",
     "lodash": "^4.17.4",
     "pg": "^7.4.0",
