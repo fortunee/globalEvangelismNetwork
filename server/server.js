@@ -5,6 +5,7 @@ import config from '../webpack.config';
 import open from 'open';
 import bodyParser from 'body-parser';
 import users from './routes/users';
+import auth from './routes/auth';
 
 /* eslint-disable no-console */
 
@@ -14,6 +15,7 @@ const compiler = webpack(config);
 
 app.use(bodyParser.json());
 app.use('/api/user', users);
+app.use('/api/auth', auth);
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true, 
