@@ -3,6 +3,8 @@ import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config';
 import open from 'open';
+import bodyParser from 'body-parser';
+import users from './routes/users';
 
 /* eslint-disable no-console */
 
@@ -10,8 +12,11 @@ const port = process.env.PORT || 3000;
 const app = express();
 const compiler = webpack(config);
 
+app.use(bodyParser.json());
+app.use('/api/user', users);
+
 app.use(require('webpack-dev-middleware')(compiler, {
-	noInfor: true,
+	noInfo: true, 
 	publicPath: config.output.publicPath
 }));
 
@@ -25,6 +30,6 @@ app.listen(port, (err) => {
 	if (err) {
 		console.log(err);
 	} else {
-		open(`http://localhost:${port}`);
+		// open(`http://localhost:${port}`);
 	}
 });
