@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { loginAction } from './../../actions/authActiond';
+import { loginAction } from './../../actions/authActions';
 import TextFieldGroup from './../shared/TextFieldGroup';
 import loginValidator from './../../../server/validations/login.validator';
 
