@@ -25,7 +25,7 @@ class SideBar extends Component {
             <ul className="menu-selection text-center">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/">Profile</Link></li>
-                <li><Link to="/">Questions</Link></li>
+                <li><Link to="/questions">Questions</Link></li>
                 <li><a href="#" onClick={this.onClick}>Logout</a></li>
             </ul>
         );
