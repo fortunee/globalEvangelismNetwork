@@ -5,7 +5,7 @@
     opacity: 0.9;
 }
 
-.menu-selection {
+.menu-selection > li {
     font-weight: bold;
     font-family: 'Open Sans';
     color: #000000;
