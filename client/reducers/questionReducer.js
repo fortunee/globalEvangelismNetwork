@@ -6,7 +6,7 @@ export default (state = [], action = {} ) => {
             return [
                 ...state,
                 {
-                    questions: action.question
+                    question: action.state.question
                 }
             ];
         default:

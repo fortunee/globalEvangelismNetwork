@@ -18,7 +18,7 @@ class QuestionsList extends Component {
             <div>
                 <h1>Questions</h1>
                 <QuestionForm askQuestion={askQuestion}/>
-                <div>
+                <div className="container">
                     {questions}
                 </div>
             </div>
@@ -27,7 +27,6 @@ class QuestionsList extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         questions: state.questions
     };

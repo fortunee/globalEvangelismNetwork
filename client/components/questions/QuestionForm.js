@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import TextFieldGroup from '../shared/TextFieldGroup';
 
 class QuestionForm extends Component {
@@ -23,7 +25,9 @@ class QuestionForm extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        // this.setState({isLoading: true});
+        this.setState({isLoading: true});
+        this.props.askQuestion(this.state);
+        this.setState({isLoading: false});
     }
 
     render() {
@@ -50,5 +54,9 @@ class QuestionForm extends Component {
         );
     }
 }
+
+QuestionForm.propTpyes = {
+    askQuestion: PropTypes.func.isRequired
+};
 
 export default QuestionForm;
