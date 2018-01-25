@@ -18,9 +18,8 @@ class QuestionsList extends Component {
             <div>
                 <h1>Questions</h1>
                 <QuestionForm askQuestion={askQuestion}/>
-                <div className="container">
-                    {questions}
-                </div>
+                
+                {questions}
             </div>
         );
     }

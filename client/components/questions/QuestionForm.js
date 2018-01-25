@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import TextFieldGroup from '../shared/TextFieldGroup';
-
 class QuestionForm extends Component {
     constructor(props) {
         super(props);
@@ -32,25 +30,27 @@ class QuestionForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                <textarea 
-                    className="form-control" 
-                    name="question" 
-                    value={this.state.question}
-                    onChange={this.onChange}
-                    rows="2">
-                </textarea>
+            <div className="col-sm-10">
+                <form onSubmit={this.onSubmit}>
+                    <textarea 
+                        className="form-control" 
+                        name="question" 
+                        value={this.state.question}
+                        onChange={this.onChange}
+                        rows="2">
+                    </textarea>
 
-                <br/>
-                <div className="form-group">
-                    <button 
-                        disabled={this.state.isLoading} 
-                        className="btn btn-lg btn-success pull-right" 
-                        type="submit">
-                        Ask a question
-                    </button>
-                </div>
-            </form>
+                    <br/>
+                    <div className="form-group">
+                        <button 
+                            disabled={this.state.isLoading} 
+                            className="btn btn-lg btn-success pull-right" 
+                            type="submit">
+                            Ask a question
+                        </button>
+                    </div>
+                </form>
+            </div>
         );
     }
 }
