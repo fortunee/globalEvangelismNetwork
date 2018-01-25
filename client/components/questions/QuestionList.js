@@ -18,9 +18,7 @@ class QuestionsList extends Component {
         );
         return (
             <div>
-                <div className="question-form">
-                    <QuestionForm askQuestion={askQuestion}/>
-                </div>
+                <QuestionForm askQuestion={askQuestion}/>
                 {questions}
             </div>
         );

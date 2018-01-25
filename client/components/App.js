@@ -17,8 +17,10 @@ class App extends Component {
                         <SideBar />
                     </Col>
                     <Col xs={12} md={9}>
-                        <FlashMessagesList />
-                        {this.props.children}
+                        <div className="wrapper-dynamic-content">
+                            <FlashMessagesList />
+                            {this.props.children}
+                        </div>
                     </Col>
                  </Row>
              </Grid>
