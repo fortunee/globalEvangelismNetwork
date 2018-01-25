@@ -1,3 +1,7 @@
+.navbar-brand {
+    color: #3c763d !important;
+    font-weight: bold;
+}
 .sidebar {
     /* height: 90vh;
     max-height: 100vh;
@@ -9,7 +13,7 @@
 .menu-selection > li {
     font-weight: bold;
     font-family: 'Open Sans';
-    color: #000000;
+    color: #3c763d;
     padding: 10px;
     box-sizing: border-box;
     font-size: 14px;
@@ -17,10 +21,11 @@
 }
 
 a {
-    color: #000000;
+    color: #3c763d;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: none;
+    color: #3c763d;
 }

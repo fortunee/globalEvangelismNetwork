@@ -3,13 +3,14 @@
     padding: 0px;
     text-decoration: none;
     list-style: none;
+    color: #3c763d;
 }
 .navbar { 
     margin-bottom:0px !important;
 }
 
 .wrapper {
-    background: #dfe4df;
+    /* background: #dfe4df; */
     padding-bottom: 15px;
 }
 
