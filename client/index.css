@@ -4,3 +4,11 @@
     text-decoration: none;
     list-style: none;
 }
+.navbar { 
+    margin-bottom:0px !important;
+}
+
+.wrapper {
+    background: #dfe4df;
+    padding-bottom: 15px;
+}

@@ -10,14 +10,16 @@ class App extends Component {
     render() {
         return (
              <Grid >
-                 <Row className="show-grid">
-                     <Col xs={4} md={3}>
-                         <SideBar />
-                     </Col>
-                     <Col xs={12} md={9}>
+                 <Row className="show-grid wrapper">
+                    <nav className="navbar navbar-default"></nav>
+                    <NavBar />
+                    <Col xs={4} md={3}>
+                        <SideBar />
+                    </Col>
+                    <Col xs={12} md={9}>
                         <FlashMessagesList />
-                         {this.props.children}
-                     </Col>
+                        {this.props.children}
+                    </Col>
                  </Row>
              </Grid>
         );

@@ -22,16 +22,16 @@ class SideBar extends Component {
     render() {
         const { isAuthenticated } = this.props.auth;
         const userMenuList = (
-            <ul className="menu-selection text-center">
+            <ul className="menu-selection text-right">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/">Profile</Link></li>
                 <li><Link to="/questions">Questions</Link></li>
+                <li><Link to="/">Profile</Link></li>
                 <li><a href="#" onClick={this.onClick}>Logout</a></li>
             </ul>
         );
 
         const guestMenuList = (
-            <ul className="menu-selection text-center">
+            <ul className="menu-selection text-right">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/signup">Signup</Link></li>
                 <li><Link to="/login">Login</Link></li>

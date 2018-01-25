@@ -8,6 +8,8 @@ import { askQuestion } from './../../actions/questionActions';
 import QuestionForm from './QuestionForm';
 import Question from './Question';
 
+import './question.style.css';
+
 class QuestionsList extends Component {
     render() {
         const { askQuestion } = this.props;
@@ -16,9 +18,9 @@ class QuestionsList extends Component {
         );
         return (
             <div>
-                <h1>Questions</h1>
-                <QuestionForm askQuestion={askQuestion}/>
-                
+                <div className="question-form">
+                    <QuestionForm askQuestion={askQuestion}/>
+                </div>
                 {questions}
             </div>
         );

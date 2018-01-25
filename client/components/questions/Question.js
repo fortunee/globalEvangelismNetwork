@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './question.style.css';
-
 class Question extends Component {
     render() {
         const { question } = this.props.question;
@@ -10,7 +8,7 @@ class Question extends Component {
         return (
             <div>
                 <div className="col-sm-10 question-wrapper">
-                    <a href="#"><h2>{question}</h2> </a> 
+                    <a href="#"><h3>{question}</h3> </a> 
                     <div className="pull-right">
                         <a href="#"><em> No Answer</em></a>
                         <a href="#"> Downvote</a> 

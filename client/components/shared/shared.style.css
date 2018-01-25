@@ -1,18 +1,18 @@
 .sidebar {
-    height: 90vh;
+    /* height: 90vh;
     max-height: 100vh;
     background: #bcceb7;
-    opacity: 0.9;
+    opacity: 0.9; */
+    border-right: 1px solid #c7cec7;
 }
 
 .menu-selection > li {
     font-weight: bold;
     font-family: 'Open Sans';
     color: #000000;
-    padding: 12px 0;
+    padding: 10px;
     box-sizing: border-box;
     font-size: 14px;
-    border-bottom: 1px solid #012b01;
     cursor: pointer;
 }
 

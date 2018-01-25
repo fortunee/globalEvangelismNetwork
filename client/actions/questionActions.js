@@ -6,3 +6,9 @@ export const askQuestion = (state) => {
         state
     };
 };
+
+// const askQuestionRequest = (data) => {
+//     return dispatch => {
+
+//     }
+// }
