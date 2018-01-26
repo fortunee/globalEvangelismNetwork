@@ -2,16 +2,17 @@ import express from 'express';
 
 import Question from './../models/question';
 import validateQuestion from './../validations/question.validator';
+import authenticate from './../middlewares/authenticate';
 
 let router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', authenticate, (req, res) => {
     Question.query({}).fetch().then(questions => {
         res.status(200).json({ questions });
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/',authenticate, (req, res) => {
     let { errors, isValid } = validateQuestion(req.body);
 
     if (isValid) {
