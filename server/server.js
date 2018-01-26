@@ -6,6 +6,7 @@ import open from 'open';
 import bodyParser from 'body-parser';
 import users from './routes/users';
 import auth from './routes/auth';
+import questions from './routes/questions';
 
 /* eslint-disable no-console */
 
@@ -14,8 +15,10 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/user', users);
 app.use('/api/auth', auth);
+app.use('/api/question', questions);
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true, 
