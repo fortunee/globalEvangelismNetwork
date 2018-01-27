@@ -1,14 +1,10 @@
-import { ASK_QUESTION } from "../actions/types";
+import { GET_QUESTIONS } from "../actions/types";
 
 export default (state = [], action = {} ) => {
     switch(action.type) {
-        case ASK_QUESTION:
-            return [
-                ...state,
-                {
-                    question: action.state.question
-                }
-            ];
+        case GET_QUESTIONS:
+            const {questions} = action.state;
+            return questions;
         default:
             return state;
     }

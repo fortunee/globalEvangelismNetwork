@@ -16,6 +16,7 @@ import './index.css';
 import routes from './routes';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
+import { getQuestionRequest } from './actions/questionActions';
 
 const store = createStore(
     rootReducer,
@@ -28,6 +29,7 @@ const store = createStore(
 if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)));
+    store.dispatch(getQuestionRequest());
 }
 
 render(

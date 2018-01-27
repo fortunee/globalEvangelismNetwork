@@ -7,7 +7,7 @@ import authenticate from './../middlewares/authenticate';
 let router = express.Router();
 
 router.get('/', authenticate, (req, res) => {
-    Question.query({}).fetch().then(questions => {
+    Question.query().orderBy('created_at', 'desc').then(questions => {
         res.status(200).json({ questions });
     });
 });
